@@ -457,7 +457,7 @@ section .title::after{
 /* TEAMS SECTION STYLING */
 
 .teams .title::after{
-    content: "Who's With ME";
+    content: "Static Projects";
 }
 
 .teams .carousel .card{
