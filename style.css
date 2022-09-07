@@ -166,7 +166,7 @@ html{
 }
 .home .home-content .text-2
 {
-    font-size: 75px;
+    font-size: 50px;
     font-weight: 600;
     margin-left: -3px;
 }
@@ -254,7 +254,7 @@ section .title::after{
 /* ABOUT SECTION STYLING  */
 
 .about .title::after{
-    content: "Who is Choi";
+    content: "Who Am I";
 }
 
 
@@ -447,6 +447,10 @@ section .title::after{
     width: 50%;
 }
 .skills-content .right .mysql::before{
+    width: 90%;
+}
+
+.skills-content .right .py::before{
     width: 90%;
 }
 
