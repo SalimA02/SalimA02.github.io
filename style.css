@@ -437,23 +437,23 @@ section .title::after{
 }
 
 .skills-content .right .html::before{
-    width: 90%;
+    width: 80%;
 }
 .skills-content .right .css::before{
-    width: 90%;
+    width: 80%;
 }
 .skills-content .right .js::before{
-    width: 70%;
+    width: 65%;
 }
 .skills-content .right .php::before{
-    width: 50%;
+    width: 30%;
 }
 .skills-content .right .mysql::before{
     width: 90%;
 }
 
 .skills-content .right .py::before{
-    width: 90%;
+    width: 80%;
 }
 
 /* TEAMS SECTION STYLING */
