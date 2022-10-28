@@ -202,7 +202,8 @@ html{
 }
 /* ALL SIMILAR CONTENTSTYLING CODE */
 section{
-    padding: 100px 0;
+
+    padding: 220px 0;
 } 
 
 .about, .services, .skills, .teams, .contact, footer{
