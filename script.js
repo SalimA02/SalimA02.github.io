@@ -33,14 +33,14 @@ $(document).ready(function()
     // TYPING ANIMATION SCRIPT
 
     var typed = new Typed(".typing",{
-        strings: ['Computer Scientist',"Developer", "UI/UX Designer"],
+        strings: ['Computer Scientist',"Web Developer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2",{
-        strings: ["Computer Scientis", "Developer", "CS Student"],
+        strings: ["Computer Scientist", "Web Developer", "Student"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
