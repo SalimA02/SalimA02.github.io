@@ -4,7 +4,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; 
+    width: 100%;
     margin: 0;
     background: url("https://source.unsplash.com/1600x900/?landscape") no-repeat center;
     font-family: 'Open Sans', sans-serif;
