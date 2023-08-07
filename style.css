@@ -307,7 +307,9 @@ section .title::after{
 
 
 /* SERICES SECTION STYLING  */
-
+.services{
+    padding: 100px 0;  
+}
 .services, .teams{
     color: #fff;
     background: #000000;
