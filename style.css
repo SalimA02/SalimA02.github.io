@@ -435,7 +435,9 @@ section .title::after{
     top: 0;
     background: #607EAA;
 }
-
+.skills-content .right .java::before{
+    width: 80%;
+}
 .skills-content .right .html::before{
     width: 80%;
 }
