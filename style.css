@@ -164,6 +164,7 @@ html{
 .home .home-content .text-1
 {
     font-size: 27px;
+    
 }
 .home .home-content .text-2
 {
@@ -175,13 +176,16 @@ html{
 {
     font-size: 40px;
     margin: 5px 0;
+    
 }
 
 .home .home-content .text-3 span
 {
-    color: #607EAA;
-    font-weight: bold;
-    
+    color: #192230;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+
 }
 
 .home .home-content a{
@@ -435,14 +439,14 @@ section .title::after{
     top: 0;
     background: #607EAA;
 }
-.skills-content .right .java::before{
-    width: 80%;
+.skills-content .right .go::before{
+    width: 75%;
 }
 .skills-content .right .html::before{
-    width: 80%;
+    width: 75%;
 }
 .skills-content .right .css::before{
-    width: 80%;
+    width: 75%;
 }
 .skills-content .right .js::before{
     width: 75%;
@@ -451,11 +455,11 @@ section .title::after{
     width: 75%;
 }
 .skills-content .right .mysql::before{
-    width: 90%;
+    width: 75%;
 }
 
 .skills-content .right .py::before{
-    width: 80%;
+    width: 75%;
 }
 
 /* TEAMS SECTION STYLING */
@@ -565,6 +569,7 @@ section .title::after{
     display: flex;
     height: 65px;
     align-items: center;
+    margin-left: 60px;
 }
 
 .contact .contact-content .row .info{
