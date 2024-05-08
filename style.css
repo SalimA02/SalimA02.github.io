@@ -780,10 +780,20 @@ footer span a:hover{
         margin-bottom: 20px;
     }
 
-    .skills .skills-content .column,
-    .contact .contact-content .column{
+    .skills .skills-content .column
+    {
         width: 100%;
         margin-bottom: 25px;
+    }
+
+    .contact .contact-content{
+        display: flex;
+        flex-direction: column;
+        background-color: #939dad;
+    }
+
+    .contact .contact-content .info{
+        flex-direction: column;
     }
 }
 
@@ -831,6 +841,16 @@ footer span a:hover{
         font-size: 27px;
         
     }
+
+    .contact .contact-content{
+        display:  flex;
+    }
+
+    .contact .contact-content .info{
+        flex-direction: column;
+    }
+
+
     
 
 }
