@@ -210,7 +210,7 @@ section{
     padding: 250px 0;
 } 
 
-.about, .services, .skills, .teams, .contact, footer{
+.about, .services, .skills, .projects, .contact, footer{
     font-family: 'Poppins', sans-serif; 
 }
 
@@ -312,18 +312,18 @@ section .title::after{
 
 /* SERICES SECTION STYLING  */
 
-.services, .teams{
+.services, .projects{
     color: #fff;
     background: #000000;
 }
 
 .services .title::before,
-.teams .title::before{
+.projects .title::before{
     background: #fff;
 }
 
 .services .title::after,
-.teams .title::after{
+.projects .title::after{
     background: #000000;
     content: "What I can provide";
 }
@@ -462,13 +462,13 @@ section .title::after{
     width: 75%;
 }
 
-/* TEAMS SECTION STYLING */
+/* projects SECTION STYLING */
 
-.teams .title::after{
+.projects .title::after{
     content: "Static Projects";
 }
 
-.teams .carousel .card{
+.projects .carousel .card{
     background: #222;
     border-radius: 6px;
     padding: 25px 35px;
@@ -476,11 +476,11 @@ section .title::after{
     transition: all 0.3s ease;
 }
 
-.teams .carousel .card:hover{
+.projects .carousel .card:hover{
     background: #607EAA;
 }
 
-.teams .carousel .card .box{
+.projects .carousel .card .box{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -488,19 +488,19 @@ section .title::after{
     transition: all 0.3s ease;
 }
 
-.teams .carousel .card:hover .box{
+.projects .carousel .card:hover .box{
     transform: scale(1.05);
     
 }
 
-.teams .carousel .card .text{
+.projects .carousel .card .text{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px;
 
 }
 
-.teams .carousel .card img{
+.projects .carousel .card img{
     height: 150px;
     width: 150px;
     object-fit: cover;
@@ -509,7 +509,7 @@ section .title::after{
     transition: all 0.3s ease;
 }
 
-.teams .carousel .card:hover img{
+.projects .carousel .card:hover img{
     border-color: #fff ;
 }
 
