@@ -789,7 +789,6 @@ footer span a:hover{
     .contact .contact-content{
         display: flex;
         flex-direction: column;
-        background-color: #939dad;
     }
 
     .contact .contact-content .info{
