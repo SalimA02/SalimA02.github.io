@@ -21,6 +21,12 @@ html{
 
 }
 
+:target::before {
+    content: "";
+    display: block;
+    height: 80px; 
+    margin-top: -80px; /* Negative margin of the same height */
+}
 /* navbar styling */
 
 .navbar
