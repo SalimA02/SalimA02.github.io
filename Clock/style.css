@@ -7,7 +7,7 @@ body{
     height: 100vh;
     justify-content: center;
     
-    background: url("https://source.unsplash.com/1600x900/?lanscape") no-repeat center;
+    background: gray;
     background-size: cover;
     overflow: hidden;
 

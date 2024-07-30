@@ -7,7 +7,7 @@ body{
     height: 100vh; 
     width: 100vw;
     margin: 0;
-    background: url("https://source.unsplash.com/1600x900/?landscape") no-repeat center;
+    background: orange;
     background-size: cover;
     font-family: 'Open Sans', sans-serif;
     font-size: 120%;
