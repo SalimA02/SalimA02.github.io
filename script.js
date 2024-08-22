@@ -27,7 +27,7 @@ $(document).ready(function() {
 
     // Typing animation script
     var typedOptions = {
-        strings: ['Computer Scientist', "Web Developer", "Software Engineer"],
+        strings: ["Web Developer", "Software Engineer"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
@@ -68,8 +68,6 @@ $(document).ready(function() {
             offset = 0;
         } else if (target === '#about') {
             offset = 100;
-        } else if (target === '#services') {
-            offset = 50;
         } else if (target === '#projects') {
             offset = 110;
         } else {

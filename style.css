@@ -70,7 +70,7 @@ html{
 
 .navbar .logo a span
 {
-    color: #607EAA;
+    color: #90a6c7;
     transition: all 0.3s ease;
 }
 
@@ -187,7 +187,7 @@ html{
 
 .home .home-content .text-3 span
 {
-    color: #192230;
+    color: #fff;
     font-weight: bolder;
     text-decoration: underline;
     font-family: 'Courier New', Courier, monospace;
@@ -471,7 +471,7 @@ section .title::after{
 /* projects SECTION STYLING */
 
 .projects .title::after{
-    content: "Static Projects";
+    content: "Projects - 2023";
 }
 
 .projects .carousel .card{
@@ -665,9 +665,12 @@ section .title::after{
 /* FOOTER SECTION STYLING  */
 
 footer{
+    display: flex;
     background: #111;
     padding: 20px 23px;
     color: #fff;
+    justify-content: center;
+    
 }
 
 footer span a{
