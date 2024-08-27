@@ -33,9 +33,31 @@ let weather = {
         document.querySelector(".wind").innerText = " Wind Speed of " + speed + "km/h";
         document.querySelector(".weather").classList.remove("loading");
     
-        
+        this.changeBackground(description);
     },
 
+
+    changeBackground: function(description) {
+
+        const backgroundMap = {
+            'clear sky': 'url(IMGs/sunny.jpg)',
+            'sunny': 'url(IMGs/sunny.jpg)',
+            'few clouds': 'url(IMGs/cloudy.jpg)',
+            'scattered clouds': 'url(IMGs/cloudy.jpg)',
+            'broken clouds': 'url(IMGs/cloudy.jpg)',
+            'shower rain': 'url(IMGs/rainy.jpg)',
+            'rain': 'url(IMGs/rainy.jpg)',
+            'light rain': 'url(IMGs/rainy.jpg)',
+            'thunderstorm': 'url(IMGs/thunderstorm.jpg)',
+            'snow': 'url(IMGs/snowy.jpg)',
+            'mist': 'url(IMGs/misty.jpg)',
+            'haze': 'url(IMGs/misty.jpg)'
+        };
+
+        
+        const backgroundImage = backgroundMap[description.toLowerCase()] || 'url(IMGs/sunny.jpg)';
+        document.body.style.backgroundImage = backgroundImage;
+    },
     
 
     search: function() {
