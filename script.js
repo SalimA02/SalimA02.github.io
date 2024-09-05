@@ -33,7 +33,7 @@ $(document).ready(function() {
         loop: true
     };
 
-    new Typed(".typing", typedOptions);
+    // new Typed(".typing", typedOptions);
     new Typed(".typing-2", typedOptions);
 
     // Owl carousel script

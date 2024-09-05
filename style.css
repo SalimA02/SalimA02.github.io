@@ -158,6 +158,8 @@ html{
     height: 100vh;
     color: #fff;
     min-height: 500px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
 
 }
 
@@ -189,7 +191,7 @@ html{
 {
     color: #fff;
     font-weight: bolder;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     font-family: 'Courier New', Courier, monospace;
 
 }
@@ -204,12 +206,44 @@ html{
     border-radius: 6px;
     border: 2px solid #607EAA;
     transition: all 0.4s ease;
+    
 }
 
 .home .home-content a:hover{
     color: #607EAA;
     background: none;
 }
+
+/* Slide IN  */
+
+/* .home-content {
+    opacity: 0;
+    transform: translateY(100px); 
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+
+  .home-content:hover {
+    opacity: 1;
+    transform: translateY(0); 
+  } */
+
+  .slide-in {
+    opacity: 0; /* Start with the content hidden */
+    transform: translateY(20px); /* Start with the content below its final position */
+    animation: slideIn 1s ease forwards; /* Apply the animation */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Slide IN END */
 /* ALL SIMILAR CONTENTSTYLING CODE */
 section{
 
