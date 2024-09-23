@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prayer Times</title>
+
+        <link rel="stylesheet" href="style.css">
+        <script src = "script.js" defer></script>
+
+
+    </head>
+
+    <body class="bg">
+
+        <div class="card">
+            <!--                    LOCATION                  -->
+            <div class="location">
+                <div class="place">London(default)</div>
+                <button class="geolocate" onclick="getLocation()">Get Your Location</button>
+            </div>
+            
+
+            <!--                    PRAYER                 -->
+            <!-- <div class="current-prayer">Duhr</div>
+            <div class="next-prayer">... minutes until ...</div> -->
+            
+
+
+            <!--                    DATES                  -->
+            <br>
+
+            <div class="dates">
+                <div id="gregorian">Gregorian</div>
+                <div id="hijri">Hijri</div>    
+            </div>
+            
+            <br>
+
+            <!--                    PRAYERT TIMES                  -->
+            <div class="prayer-container">
+
+                <div  class="prayer"> 
+                    <div>Fajr</div>
+                    <div id="Fajr"></div>
+                </div>
+
+                <div  class="prayer"> 
+                    <div>Duhr</div>
+                    <div id="Duhr"></div>
+                </div>
+
+                <div  class="prayer"> 
+                    <div>Asr</div>
+                    <div id="Asr"></div>
+                </div>
+
+                <div  class="prayer"> 
+                    <div>Maghreb</div>
+                    <div id="Maghreb"></div>
+                </div>
+
+                <div  class="prayer"> 
+                    <div>Isha</div>
+                    <div id="Isha"></div>
+                </div>
+
+            </div>
+            
+
+        </div>
+
+        
+        
+    </body>
+
+</html>
