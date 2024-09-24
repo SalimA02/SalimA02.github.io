@@ -145,4 +145,4 @@ function formatIslamicDate(inputDate) {
 }
 
 
-getData(54.509865, -0.118092)
+getData(51.5072, 0.1276)
