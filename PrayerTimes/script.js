@@ -1,6 +1,6 @@
 const currentDate = new Date();
 const day = currentDate.getDate() -1;
-const month = currentDate.getMonth() + 1; // Months are zero-based, so January is 0
+const month = currentDate.getMonth() + 1;
 const year = currentDate.getFullYear();
 
 
@@ -19,7 +19,12 @@ function showPosition(position) {
     let latitude = position.coords.latitude;
     let longitude = position.coords.longitude;
 
+    
     getData(latitude, longitude)
+
+    let place = document.getElementById("place")
+    place.textContent = `(${latitude}, ${longitude})`
+
 }
 
 
@@ -28,7 +33,7 @@ async function getData(latitude, longitude){
 
     
 
-    const apiUrl = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2`;
+    const apiUrl = `http://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2&tune=0,-3,0,7,0,4,0,-5`;
 
     const response = await fetch(apiUrl);
     const data = await response.json();
@@ -38,6 +43,7 @@ async function getData(latitude, longitude){
         console.log(data.data[day])
 
         const current = data.data[day].timings
+
 ///////////////DATES//////////////////////////
         const gregorian = document.getElementById('gregorian');
         let today = formatDate(data.data[day].date.gregorian.date)
@@ -145,4 +151,8 @@ function formatIslamicDate(inputDate) {
 }
 
 
-getData(51.5072, 0.1276)
+getData(51.5074, 0.1272)
+
+
+
+
