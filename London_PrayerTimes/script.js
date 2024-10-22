@@ -33,7 +33,7 @@ async function getData(latitude, longitude){
 
     
 
-    const apiUrl = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2&tune=0,-3,0,5,-1,4,0,-5`;
+    const apiUrl = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2&tune=0,-4,0,6,0,4,0,-3`;
 
     const response = await fetch(apiUrl);
     const data = await response.json();
