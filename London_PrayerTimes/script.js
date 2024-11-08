@@ -33,7 +33,7 @@ async function getData(latitude, longitude){
 
     
 
-    const apiUrl = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2&tune=0,-6,0,6,1,5,-4,0`;
+    const apiUrl = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2&tune=0,-7,0,6,2,6,-3,0`;
     // API call with tuning to match Islamic Relief prayer times
 
     const response = await fetch(apiUrl);
