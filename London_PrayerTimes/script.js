@@ -3,32 +3,6 @@ const day = currentDate.getDate() -1;
 const month = currentDate.getMonth() + 1;
 const year = currentDate.getFullYear();
 
-
-
-
-
-// function getLocation(){
-//     if (navigator.geolocation) {
-//         navigator.geolocation.getCurrentPosition(showPosition);
-//     } else { 
-//         console.log("Geolocation is not supported by this browser.");
-//     }
-// }
-
-// function showPosition(position) {
-//     let latitude = position.coords.latitude;
-//     let longitude = position.coords.longitude;
-
-    
-//     getData(latitude, longitude)
-
-//     let place = document.getElementById("place")
-//     place.textContent = `(${latitude}, ${longitude})`
-
-// }
-
-
-
 async function getData(latitude, longitude){
 
     
