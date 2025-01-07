@@ -4,7 +4,7 @@ async function fetchPrayerTimes() {
   try {
       const apiKey = '634b7e6f-ac57-4bc2-a1cb-48f3522e4463'; // Replace with your actual API key
       const format = 'json';
-      const url = `http://www.londonprayertimes.com/api/times/?format=${format}&key=${apiKey}`;
+      const url = `https://www.londonprayertimes.com/api/times/?format=${format}&key=${apiKey}`;
 
       const response = await fetch(url);
 
