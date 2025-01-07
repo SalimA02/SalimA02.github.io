@@ -1,133 +1,50 @@
-const currentDate = new Date();
-const day = currentDate.getDate() -1;
-const month = currentDate.getMonth() + 1;
-const year = currentDate.getFullYear();
+// New accurate API used: https://www.londonprayertimes.com/api/ , No need to tune!
 
-async function getData(latitude, longitude){
+async function fetchPrayerTimes() {
+  try {
+      const apiKey = '634b7e6f-ac57-4bc2-a1cb-48f3522e4463'; // Replace with your actual API key
+      const format = 'json';
+      const url = `http://www.londonprayertimes.com/api/times/?format=${format}&key=${apiKey}`;
 
-    
+      const response = await fetch(url);
 
-    const apiUrl = `https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=2&tune=0,4,0,6,2,2,-28`;
-    // API call with tuning to match Islamic Relief prayer times
+      if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+      }
 
-    const response = await fetch(apiUrl);
-    const data = await response.json();
+      const data = await response.json();
+      console.log('API Response:', data);
 
-    
-    if(data.code === 200){
-        console.log(data.data[day])
+      const currentDate = new Date().toISOString().split('T')[0];
+      console.log('Current Date:', currentDate);
 
-        const current = data.data[day].timings
+      if (data.date === currentDate) {
+          document.getElementById('Fajr').textContent = data.fajr;
+          document.getElementById('Duhr').textContent = data.dhuhr;
+          
+          document.getElementById('Asr').textContent = PM(data.asr);
+          document.getElementById('Maghreb').textContent = PM(data.magrib);
+          document.getElementById('Isha').textContent = PM(data.isha);
+      } else {
+          console.error('Prayer times for today are not available.');
+      }
 
-///////////////DATES//////////////////////////
-        const gregorian = document.getElementById('gregorian');
-        let today = formatDate(data.data[day].date.gregorian.date)
-        gregorian.textContent = today;
-
-
-        const hijri = document.getElementById('hijri');
-        let todayHijri = formatIslamicDate(data.data[day].date.hijri.date)
-        gregorian.textContent = today;
-        hijri.textContent = todayHijri;
-    
-
-///////////////CURRENT PRAYER//////////////////////////
-    
-        
-
-
-///////////////PRAYERS//////////////////////////
-        const Fajr = document.getElementById('Fajr');
-        Fajr.textContent = current.Fajr.split(' ')[0];
-
-        const Duhr = document.getElementById('Duhr');
-        Duhr.textContent = current.Dhuhr.split(' ')[0];
-
-        const Asr = document.getElementById('Asr');
-        Asr.textContent = current.Asr.split(' ')[0];
-
-        const Maghreb = document.getElementById('Maghreb');
-        Maghreb.textContent = current.Maghrib.split(' ')[0];
-
-        const Isha = document.getElementById('Isha');
-        Isha.textContent = current.Isha.split(' ')[0];
-
-    } else {
-        console.log('Failed to fetch data:', data.code);
-    }
-
-    
-
+  } catch (error) {
+      console.error('Error fetching prayer times:', error.message);
+      alert(`Error: ${error.message}`);
+  }
 }
 
-//////////////////////////FORMAT ISLAMIC MONTH////////////////////////
-
-function formatDate(inputDate) {
-    const parts = inputDate.split('-');
-    const day = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10);
-    const year = parseInt(parts[2], 10);
+function PM(time) {
+  // console.log('Attempting to add 12 hours to time:', time);
+  let [hours, minutes] = time.split(':');
+  hours = parseInt(hours, 10);
     
-    // Create a Date object
-    const date = new Date(year, month - 1, day);
+  hours += 12; // Add 12 hours if less than 12 (e.g., AM times)
   
-    // Format the date using Intl.DateTimeFormat
-    const formatter = new Intl.DateTimeFormat('en-US', {
-      month: 'long',
-      day: 'numeric',
-      year: 'numeric'
-    });
-  
-    // Get the formatted date string
-    const formattedDate = formatter.format(date);
-  
-    // Add suffix to the day
-    const daySuffix = getDaySuffix(day);
-    
-    return formattedDate.replace(/\b\d+\b/, (match) => match + daySuffix);
-  }
-
-//////////////////////////FORMAT ISLAMIC MONTH////////////////////////
-
-function formatIslamicDate(inputDate) {
-    const islamicMonths = [
-      'Muharram', 'Safar', 'Rabi\' al-awwal', 'Rabi\' al-thani',
-      'Jumada al-awwal', 'Jumada al-thani', 'Rajab', 'Sha\'ban',
-      'Ramadan', 'Shawwal', 'Dhu al-Qi\'dah', 'Dhu al-Hijjah'
-    ];
-  
-    const parts = inputDate.split('-');
-    const day = parseInt(parts[0], 10);
-    const month = parseInt(parts[1], 10) - 1; // Adjust month index
-    const year = parseInt(parts[2], 10);
-  
-    // Format the date using the Islamic month name
-    const formattedDate = `${islamicMonths[month]} ${day}${getDaySuffix(day)}, ${year}`;
-  
-    return formattedDate;
-  }
-
-//////////////////////////FORMAT DATE SUFFIX////////////////////////
-
-  function getDaySuffix(day) {
-    if (day >= 11 && day <= 13) {
-      return 'th';
-    }
-    switch (day % 10) {
-      case 1:
-        return 'st';
-      case 2:
-        return 'nd';
-      case 3:
-        return 'rd';
-      default:
-        return 'th';
-    }
+  const formattedTime = `${hours < 10 ? '0' + hours : hours}:${minutes}`;
+  // console.log('Converted time with 12 hours added:', formattedTime);
+  return formattedTime;
 }
 
-
-getData(51.5074, 0.1272) // Coordinates For Central London
-
-
-
-
+window.onload = fetchPrayerTimes;
