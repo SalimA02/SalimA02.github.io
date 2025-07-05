@@ -20,7 +20,7 @@ async function fetchPrayerTimes() {
 
       if (data.date === currentDate) {
           document.getElementById('Fajr').textContent = data.fajr;
-          document.getElementById('Duhr').textContent = data.dhuhr;
+          document.getElementById('Duhr').textContent = PM(data.dhuhr);
           
           document.getElementById('Asr').textContent = PM(data.asr);
           document.getElementById('Maghreb').textContent = PM(data.magrib);
