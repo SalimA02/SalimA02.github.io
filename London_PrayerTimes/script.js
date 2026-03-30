@@ -17,10 +17,14 @@ async function fetchPrayerTimes() {
 
       const currentDate = new Date().toISOString().split('T')[0];
       console.log('Current Date:', currentDate);
+      document.getElementById('Gregorian').textContent = (`Gregorian: ${currentDate}`);
 
       if (data.date === currentDate) {
+
+        //   document.getElementById('Hijri').textContent = (`Hijri: ${currentDate}`);
+
           document.getElementById('Fajr').textContent = data.fajr;
-          document.getElementById('Duhr').textContent = data.dhuhr;
+          document.getElementById('Duhr').textContent = PM(data.dhuhr);
           
           document.getElementById('Asr').textContent = PM(data.asr);
           document.getElementById('Maghreb').textContent = PM(data.magrib);
@@ -40,7 +44,7 @@ function PM(time) {
   let [hours, minutes] = time.split(':');
   hours = parseInt(hours, 10);
     
-  hours += 12; // Add 12 hours if less than 12 (e.g., AM times)
+  hours += 12;
   
   const formattedTime = `${hours < 10 ? '0' + hours : hours}:${minutes}`;
   // console.log('Converted time with 12 hours added:', formattedTime);
