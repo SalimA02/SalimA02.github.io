@@ -2,10 +2,7 @@
 
 async function fetchPrayerTimes() {
   try {
-      const apiKey = '#########'; // Replace with your actual API key
-      const format = 'json';
-      const url = `https://www.londonprayertimes.com/api/times/?format=${format}&key=${apiKey}`;
-
+      const url = "https://salim-api-proxy.salimahmed02.workers.dev/prayer";
       const response = await fetch(url);
 
       if (!response.ok) {
